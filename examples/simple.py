@@ -16,6 +16,7 @@ class BasicCLI(commander.Commander):
 
     def handle_interrupt(self):
         print('did you try to interrupt me?')
+        return True # return true in order to close the CLI
 
 if __name__ == '__main__':
     commander.logger.handlers[0].setFormatter(logging.Formatter('%(asctime)s [%(levelname)-5.5s] %(message)s'))
