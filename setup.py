@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='commandercli',
-    version='0.5.0',
+    version='0.5.1',
     author='Omer Cohen',
     author_email='nevergfx1@gmail.com',
     description='Simple yet effective autocompleting CLI',

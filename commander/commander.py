@@ -12,6 +12,10 @@ else:
 
     input_func = input
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler())
+
 class Commander:
     def __init__(self, prompt='>', intro=None):
         self.prompt = prompt
@@ -50,7 +54,7 @@ class Commander:
         self.completer.init()
 
         if self.intro:
-            logging.info(self.intro)
+            logger.info(self.intro)
 
         self.running = True
         while self.running:
@@ -73,4 +77,4 @@ class Commander:
                     self.handle_exit()
                     break
             except command_tree.NoSuchCommandError as error:
-                logging.error('Invalid command: \"{command}\"'.format(command=error.command))
+                logger.error('Invalid command: \"{command}\"'.format(command=error.command))
